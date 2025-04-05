@@ -11,23 +11,44 @@ public class PickUpObject : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        picked = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playerAround)
-        {
-            if (Input.GetKeyDown(KeyCode.E) && !picked)
-            {
-                PickupObject();
-            }
 
-            else if(picked && Input.GetKeyDown(KeyCode.E))
+        
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (picked)
             {
                 DropObject();
             }
+
+            else
+            {
+                Camera cam = Camera.main;
+                Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 10f))
+                {
+
+                    if (hit.transform == transform)
+                    {
+                        PickupObject();
+                        Debug.Log("picked up");
+                    }
+                }
+                else
+                {
+                    Debug.Log("nothing");
+                }
+            }
         }
+        
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,7 +58,12 @@ public class PickUpObject : MonoBehaviour
             playerAround = true;
         }
 
-        else
+       
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player") && !picked && !other.CompareTag("PickedUp"))
         {
             playerAround = false;
         }
@@ -50,9 +76,15 @@ public class PickUpObject : MonoBehaviour
         picked = true;
         holdingItem = true;
         Rigidbody rb = GetComponent<Rigidbody>();
+        Collider col = GetComponent<Collider>();
         if(rb != null){
             rb.isKinematic = true;
             transform.localPosition = new Vector3(0, 0, 1);
+        }
+
+        if (col != null)
+        {
+            col.enabled = false;
         }
        
     }
@@ -63,9 +95,15 @@ public class PickUpObject : MonoBehaviour
         picked = false;
         holdingItem = false;
         Rigidbody rb = GetComponent<Rigidbody>();
+        Collider col = GetComponent<Collider>();
         if (rb != null)
         {
             rb.isKinematic = false;
+        }
+
+        if (col != null)
+        {
+            col.enabled = true;
         }
 
         transform.position = transform.position;
