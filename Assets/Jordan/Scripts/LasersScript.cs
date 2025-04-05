@@ -63,20 +63,23 @@ public class LasersScript : MonoBehaviour
         if (other.CompareTag("Player") && isOn)
         {
             Debug.Log("detecting player");
-            try
+            if (PlayerHeallth.instance.currentHealth > 0)
             {
-                PlayerHeallth.instance.TakeDamage(30f);
+                try
+                {
+                    PlayerHeallth.instance.TakeDamage(30f);
+                }
+
+                catch { }
             }
 
-            catch { }
+            else
+            {
+                PlayerHeallth.instance.StopRegen();
+            }
+            
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player") && isOn)
-        {
-            Debug.Log("detecting player");
-        }
-    }
+   
 }

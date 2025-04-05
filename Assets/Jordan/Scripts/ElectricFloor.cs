@@ -3,30 +3,29 @@ using UnityEngine;
 public class ElectricFloor : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            PlayerHeallth.instance.TakeDamage(30f);
-        }
-    }
+   
+   
 
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            PlayerHeallth.instance.TakeDamage(30f);
+            if (PlayerHeallth.instance.currentHealth > 0)
+            {
+                try
+                {
+                    PlayerHeallth.instance.TakeDamage(30f);
+                }
+
+                catch { }
+            }
+
+            else
+            {
+                PlayerHeallth.instance.StopRegen();
+            }
         }
     }
+
+    
 }
