@@ -5,7 +5,6 @@ public class LasersScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     float timer;
-    float killTimer;
     GameObject Lasers;
     bool isOn;
     void Start()
@@ -21,7 +20,7 @@ public class LasersScript : MonoBehaviour
     {
         if (isOn)
         {
-            killTimer += Time.deltaTime;
+            timer += Time.deltaTime;
         }
 
         else
@@ -30,25 +29,54 @@ public class LasersScript : MonoBehaviour
         }
        
         
-        Debug.Log(timer);
-        Debug.Log(killTimer);
+      //  Debug.Log(timer);
+     
 
-        if (timer >= 10f)
+        if (timer >= 5f)
         {
-            Lasers.SetActive(true);
-            isOn=true;
-            killTimer = 0f;
+           
 
+            if (isOn)
+            {
+                Lasers.SetActive(false);
+                isOn = false;
+
+
+
+
+            }
+
+            else
+            {
+                Lasers.SetActive(true);
+                isOn=true;
+            }
+
+            timer = 0f;
         }
 
-        if (killTimer >= 10f)
-        {
-            Lasers.SetActive(false);
-            isOn=false;
-            timer = 0f;
-           
-            
+       
+    }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player") && isOn)
+        {
+            Debug.Log("detecting player");
+            try
+            {
+                PlayerHeallth.instance.TakeDamage(30f);
+            }
+
+            catch { }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player") && isOn)
+        {
+            Debug.Log("detecting player");
         }
     }
 }

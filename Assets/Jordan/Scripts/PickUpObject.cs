@@ -52,8 +52,9 @@ public class PickUpObject : MonoBehaviour
         Rigidbody rb = GetComponent<Rigidbody>();
         if(rb != null){
             rb.isKinematic = true;
+            transform.localPosition = new Vector3(0, 0, 1);
         }
-        transform.localPosition = new Vector3(0,0, 1);
+       
     }
 
     void DropObject()
