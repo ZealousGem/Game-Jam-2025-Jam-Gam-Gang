@@ -1,0 +1,42 @@
+using Unity.Mathematics;
+using UnityEngine;
+
+public class PlayerKeyCards : MonoBehaviour
+{
+    public bool hasKeycard1 = false;
+    public bool hasKeycard2 = false;
+    public bool hasKeycard3 = false;
+
+    private void OnCollisionEnter(Collision other)
+    {
+
+        if (other.gameObject.CompareTag("Card1"))
+        {
+            hasKeycard1 = true;
+            DestroyObject(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("Card2"))
+        {
+            hasKeycard2 = true;
+            DestroyObject(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("Card3"))
+        {
+            hasKeycard3 = true;
+            DestroyObject(other.gameObject);
+        }
+    }
+    
+    
+
+    public static PlayerKeyCards Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+  
+
+}

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    
     public float moveSpeed = 5f;
     public float jumpForce = 7f;
     public float gravityMultiplier = 2f;
@@ -11,6 +12,7 @@ public class PlayerManager : MonoBehaviour
 
     private Rigidbody rb;
     private bool isGrounded;
+
 
     void Start()
     {
