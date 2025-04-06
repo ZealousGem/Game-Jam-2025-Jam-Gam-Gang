@@ -63,10 +63,7 @@ public class PickUpObject : MonoBehaviour
             TextUI.SetActive(true);
         }
 
-        else
-        {
-            TextUI.SetActive(false);
-        }
+        
         
        
     }
@@ -78,6 +75,7 @@ public class PickUpObject : MonoBehaviour
         if (other.CompareTag("Player") && !picked && !other.CompareTag("PickedUp"))
         {
             playerAround = false;
+            TextUI.SetActive(false);
         }
 
        
