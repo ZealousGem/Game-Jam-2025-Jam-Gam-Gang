@@ -38,6 +38,7 @@ public class InteractableObject : MonoBehaviour
     public void TurnonExplosion()
     {
         Debug.Log("boom");
+        ExplosionTimer.Instance.beginTime = true;
     }
 
     public void TakePowerCore()
