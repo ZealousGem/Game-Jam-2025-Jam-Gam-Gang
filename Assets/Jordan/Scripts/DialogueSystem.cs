@@ -14,7 +14,7 @@ public class DialogueSystem : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private Queue<string> lines;
     private Queue<Sprite> images;
-    private Queue<string> names;
+
 
     public GameObject Dialogue;
     public GameObject Button;
@@ -27,17 +27,17 @@ public class DialogueSystem : MonoBehaviour
     public int counter = 0;
     public bool end;
     public float Speed;
-   // DialogueInfo info;
+    DialogueInfo info;
 
     private void Start()
     {
         Dialogue.SetActive(false);
         lines = new Queue<string>(); // creates a Queue string for the dialogue 
         images = new Queue<Sprite>(); // creates Queue sprite for images
-        names = new Queue<string>(); // creates Queue string for the names 
+      
         end = true;
 
-       /* if (info == null)
+        if (info == null)
         {
             info = FindAnyObjectByType<DialogueInfo>(); // instiates the inforamtion from the Json file
 
@@ -47,15 +47,15 @@ public class DialogueSystem : MonoBehaviour
         if (info == null)
         {
             Debug.LogError("DialogueInfo component is not assigned or not found in the scene.");
-        } */
+        } 
     }
 
-    /*public void StartDialogue(string ChacterName) // method that will start the dialogue using the characters name in the string array from diaslogue manager
+    public void StartDialogue(string ChacterName) // method that will start the dialogue using the characters name in the string array from diaslogue manager
     {
 
         Dialogue.SetActive(true);
         end = false;
-        People characterD = info.DialogueData.Characters.Find(Characters => Characters.id == ChacterName); // this will create a character object and will instatite with the data from the josn file
+        CutsceneNos characterD = info.cutscene.Cuts.Find(Cuts => Cuts.id == ChacterName); // this will create a character object and will instatite with the data from the josn file
         if (characterD != null)
         {
 
@@ -64,27 +64,24 @@ public class DialogueSystem : MonoBehaviour
 
             lines.Clear();
             images.Clear();
-            names.Clear();
+           
 
             // clears any elements that are in the queue
 
-            foreach (DialogueLines sent in characterD.data)
+            foreach (StoryText sent in characterD.Text)
             {
-                lines.Enqueue(sent.Text); // will add all the text elements from object into the queue to create a sequential order
+                lines.Enqueue(sent.texts); // will add all the text elements from object into the queue to create a sequential order
             }
 
-            foreach (DialogueImages sent in characterD.images)
+            foreach (StoryImages sent in characterD.images)
             {
-                Sprite curImage = LoadSprite(sent.picture); // finds the file path of image
+                Sprite curImage = LoadSprite(sent.images); // finds the file path of image
                 images.Enqueue(curImage); // will add all sprites from object into the queue to create a sequential order
 
 
             }
 
-            foreach (DialogueNames sent in characterD.character)
-            {
-                names.Enqueue(sent.name);
-            } 
+         
 
             DisplayNextSentence(); // this will activate to start the elemtns to be removed from the queue
         }
@@ -136,10 +133,10 @@ public class DialogueSystem : MonoBehaviour
         }
         string sentence = lines.Dequeue(); // everytime the diplsay is pressed the element in front will be removed and makes the element behind in fron of the Queue
         Sprite Nextimage = images.Dequeue();
-        string CharName = names.Dequeue();
+      
 
 
-        Charname.text = CharName;
+        
         image.sprite = Nextimage;
         Button.SetActive(false);
         StartCoroutine(TypeDialogue(sentence)); // displays the dialogue text in a courtieine to have text pop up in a timed sequence 
@@ -168,7 +165,7 @@ public class DialogueSystem : MonoBehaviour
             Button.SetActive(true);
         }
 
-    } */
+    } 
 
     void EndDialogue() // will end the dialogue by setting bool to false allowing the for loop in dialogue manager to move the i to the next position
     {
@@ -178,7 +175,7 @@ public class DialogueSystem : MonoBehaviour
         counter = 0;
         login.Clear();
         images.Clear();
-        names.Clear();
+       
         Dialogue.SetActive(false);
     }
 }
