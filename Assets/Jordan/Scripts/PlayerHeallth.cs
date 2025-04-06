@@ -10,6 +10,7 @@ public class PlayerHeallth : MonoBehaviour
 
     public float MaxHealth = 100f;
     public float currentHealth;
+    public bool isDamaged;
     Coroutine regenCor;
     Rigidbody rb;
     Collider col;
@@ -41,6 +42,7 @@ public class PlayerHeallth : MonoBehaviour
     void Start()
     {
         currentHealth = MaxHealth;
+        isDamaged = false;
     }
 
     // Update is called once per frame
@@ -48,7 +50,7 @@ public class PlayerHeallth : MonoBehaviour
     {
         currentHealth -= dam * Time.deltaTime;
         currentHealth = Mathf.Clamp(currentHealth, 0, MaxHealth);
-
+        isDamaged = true;
         if (currentHealth <= 0)
         {
             currentHealth = 0;
@@ -59,6 +61,7 @@ public class PlayerHeallth : MonoBehaviour
 
         else
         {
+            
             if (regenCor != null) StopCoroutine(regenCor);
             regenCor = StartCoroutine(RegenHealth(1f, 10f));
         }
