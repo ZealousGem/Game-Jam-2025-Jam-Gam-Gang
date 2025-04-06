@@ -1,3 +1,5 @@
+using TMPro;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +11,7 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField]
     private LayerMask mask;
     private PlayerUI playerUI;
+    [SerializeField] private GameObject prompt;
 
     void Start()
     {
@@ -21,28 +24,68 @@ public class PlayerInteract : MonoBehaviour
     {
         playerUI.UpdateText(string.Empty);
 
+        RayCasting();
         //creates ray to detect colliders based on set distance
+    
+    }
+    
+    void KeyInteract(Interactable interactable,RaycastHit hit)
+    {
 
+        interactable = hit.collider.GetComponent<Interactable>();
+        
+        playerUI.UpdateText(interactable.promptmessage);
+
+        //Debug.Log("Interactable");
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            prompt.SetActive(false);
+            //switch case based off different interactables
+            interactable.BaseInteract();
+        }
+
+    }
+    void RayCasting()
+    {
         Ray ray = new Ray(cam.transform.position, cam.transform.forward);
-        Debug.DrawRay(ray.origin, ray.direction * distance);
+        //Debug.DrawRay(ray.origin, ray.direction * distance);
 
         RaycastHit hitInfo; //variable for collision info
-        if(Physics.Raycast(ray, out hitInfo, distance, mask)) 
+        if (Physics.Raycast(ray, out hitInfo, distance, mask) && (hitInfo.collider.GetComponent<Interactable>() != null))
         {
             //if ray makes contact with an interactable with certain tag it will activate
-            if(hitInfo.collider.GetComponent<Interactable>() != null)
-            {
-                Interactable interactable = hitInfo.collider.GetComponent<Interactable>();
-                playerUI.UpdateText(interactable.promptmessage);
 
-                //Debug.Log("Interactable");
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    //switch case based off different interactables
-                    interactable.BaseInteract();
-                }
-            }
-        
+
+            Interactable interactable = hitInfo.collider.GetComponent<Interactable>();
+
+            KeyInteract(interactable, hitInfo);
+
+
         }
     }
+    /*
+    void GetInteractable(Interactable interactable, RaycastHit hit)
+    {
+        interactable = hit.collider.GetComponent<Interactable>();
+    }
+    */
+    /*
+    void RayCasting(Ray ray)
+    {
+        hitInfo = new RaycastHit();
+        if (Physics.Raycast(ray, out hit, distance, mask))
+        {
+            //if ray makes contact with an interactable with certain tag it will activate
+            if (hit.collider.GetComponent<Interactable>() != null)
+            {
+                Interactable interactable = hit.collider.GetComponent<Interactable>();
+
+                KeyInteract(interactable, hit);
+            }
+
+        }
+
+    }
+    */
 }
+
