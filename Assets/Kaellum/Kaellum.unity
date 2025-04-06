@@ -2129,7 +2129,7 @@ MonoBehaviour:
   distance: 3
   mask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   prompt: {fileID: 758560936}
 --- !u!114 &1575575408
 MonoBehaviour:
