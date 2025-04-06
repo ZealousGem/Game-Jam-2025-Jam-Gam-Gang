@@ -32,6 +32,24 @@ public class SafePuzzle : MonoBehaviour
    
     void Update()
     {
+        
+
+    }
+    int ExtractNumber(string input)
+    {
+        // Use System.Text.RegularExpressions to find a number in the string
+        System.Text.RegularExpressions.Match match = System.Text.RegularExpressions.Regex.Match(input, @"\d+");
+
+        if (match.Success)
+        {
+            return int.Parse(match.Value);
+        }
+
+        return -1; 
+    }
+    public void Enter()
+    {
+
         string text1 = detectNum1.text;
         string text2 = detectNum2.text;
         string text3 = detectNum3.text;
@@ -53,18 +71,5 @@ public class SafePuzzle : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
-
-    }
-    int ExtractNumber(string input)
-    {
-        // Use System.Text.RegularExpressions to find a number in the string
-        System.Text.RegularExpressions.Match match = System.Text.RegularExpressions.Regex.Match(input, @"\d+");
-
-        if (match.Success)
-        {
-            return int.Parse(match.Value);
-        }
-
-        return -1; 
     }
 }
