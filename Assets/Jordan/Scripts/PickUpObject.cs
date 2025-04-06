@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class PickUpObject : MonoBehaviour
@@ -5,6 +6,8 @@ public class PickUpObject : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     GameObject Player;
+    
+    public GameObject TextUI;
     static bool holdingItem = false;
     bool picked;
     bool playerAround;
@@ -12,6 +15,7 @@ public class PickUpObject : MonoBehaviour
     {
         Player = GameObject.FindGameObjectWithTag("Player");
         picked = false;
+        TextUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,10 +60,18 @@ public class PickUpObject : MonoBehaviour
         if (other.CompareTag("Player") && !picked && !other.CompareTag("PickedUp"))
         {
             playerAround = true;
+            TextUI.SetActive(true);
         }
 
+        else
+        {
+            TextUI.SetActive(false);
+        }
+        
        
     }
+
+   
 
     private void OnTriggerExit(Collider other)
     {
@@ -67,6 +79,8 @@ public class PickUpObject : MonoBehaviour
         {
             playerAround = false;
         }
+
+       
     }
 
     void PickupObject()
