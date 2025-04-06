@@ -7,9 +7,8 @@ public class StartSceneButtons : MonoBehaviour
     private GameObject Press;
    public void PlayGame()
     {
-        //SceneManager.GetSceneByName("Level 1");
-        //SceneManager.SetActiveScene(SceneManager.GetSceneByName("Level 1"));
-        SceneManager.SetActiveScene(SceneManager.GetSceneByName("Kaellum"));
+        SceneManager.LoadScene(2);
+        //SceneManager.SetActiveScene(SceneManager.GetSceneByName("Kaellum"));
     }
 
     public void Options()
