@@ -344,6 +344,7 @@ MonoBehaviour:
   Quiter: {fileID: 2103474127}
   numChange: {fileID: 1601626278}
   SafePanel: {fileID: 886033162}
+  Prompt: {fileID: 758560936}
 --- !u!4 &197052227
 Transform:
   m_ObjectHideFlags: 0
@@ -413,6 +414,9 @@ MonoBehaviour:
   detectNum1: {fileID: 254693283}
   detectNum2: {fileID: 986028969}
   detectNum3: {fileID: 1267799150}
+  Quiter: {fileID: 2103474127}
+  numChange: {fileID: 897672875}
+  SafePanel: {fileID: 886033162}
   CodePiece1: 4
   CodePiece2: 7
   CodePiece3: 8
@@ -907,7 +911,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &886033163
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2126,6 +2130,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 64
+  prompt: {fileID: 758560936}
 --- !u!114 &1575575408
 MonoBehaviour:
   m_ObjectHideFlags: 0
