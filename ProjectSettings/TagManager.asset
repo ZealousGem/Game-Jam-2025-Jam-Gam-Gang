@@ -6,12 +6,7 @@ TagManager:
   tags:
   - Plyaer
   - Ground
-  - Door1
-  - Door2
-  - Door3
-  - Card1
-  - Card2
-  - Card3
+  - PickedUp
   layers:
   - Default
   - TransparentFX
@@ -19,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Interactable
+  - 
   - 
   - 
   - 
