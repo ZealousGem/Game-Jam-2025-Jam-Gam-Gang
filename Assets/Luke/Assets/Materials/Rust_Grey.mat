@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7224410690154524333
+--- !u!114 &-9111835499239510059
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rust_Red
+  m_Name: Rust_Grey
   m_Shader: {fileID: -6465566751694194690, guid: 9963feb002b35014da01f04c036af22a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -102,7 +102,7 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Base_Colour: {r: 0.59607846, g: 0.13931197, b: 0.035294127, a: 0}
+    - _Base_Colour: {r: 0.5098344, g: 0.5197853, b: 0.5377358, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
