@@ -1648,6 +1648,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2196875438761103382, guid: 84f184f163713d742ac44da0cb200603, type: 3}
+      propertyPath: playerKeyCards
+      value: 
+      objectReference: {fileID: 1310283690}
     - target: {fileID: 4857507683298177577, guid: 84f184f163713d742ac44da0cb200603, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.781111
