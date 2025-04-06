@@ -75,7 +75,7 @@ public class DialogueSystem : MonoBehaviour
 
             foreach (StoryImages sent in characterD.images)
             {
-                Sprite curImage = LoadSprite(sent.images); // finds the file path of image
+                Sprite curImage = LoadSprite(sent.imageNo); // finds the file path of image
                 images.Enqueue(curImage); // will add all sprites from object into the queue to create a sequential order
 
 
