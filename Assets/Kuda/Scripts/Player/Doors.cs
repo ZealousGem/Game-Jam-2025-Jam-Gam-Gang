@@ -21,7 +21,7 @@ public class Doors : MonoBehaviour
             if ((other.gameObject.CompareTag("Player")) && playerKeyCards.hasKeycard1 == true)
             {
                 DoorColl.isTrigger = true;
-                sceneManagement.GoToLevel1();
+                sceneManagement.GoToLevel2();
 
             }
             else
@@ -36,6 +36,7 @@ public class Doors : MonoBehaviour
             if ((other.gameObject.CompareTag("Player")) & playerKeyCards.hasKeycard2 == true)
             {
                 DoorColl.isTrigger = true;
+                sceneManagement.GoToLevel3();
             }
             else
             {
