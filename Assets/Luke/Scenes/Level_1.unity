@@ -7592,11 +7592,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4102520012571611761, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
       propertyPath: hasKeycard1
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4102520012571611761, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
       propertyPath: hasKeycard2
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5769104026749946017, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
       propertyPath: prompt
