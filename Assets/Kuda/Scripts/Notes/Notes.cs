@@ -31,6 +31,9 @@ public class Notes : Interactable
         {
              
             case 0:
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                Time.timeScale = 0f;
                 notesPanel.SetActive(true);
                 notesText[0].gameObject.SetActive(true);
                 notesText[1].gameObject.SetActive(false);
@@ -38,6 +41,9 @@ public class Notes : Interactable
                 click = 1;
                 break;
             case 1:
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                Time.timeScale = 0f;
                 notesPanel.SetActive(true);
                 notesText[0].gameObject.SetActive(false);
                 notesText[1].gameObject.SetActive(true);
@@ -45,6 +51,9 @@ public class Notes : Interactable
                 click = 2;
                 break;
             case 2:
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                Time.timeScale = 0f;
                 notesPanel.SetActive(true);
                 notesText[0].gameObject.SetActive(false);
                 notesText[1].gameObject.SetActive(false);
@@ -60,7 +69,10 @@ public class Notes : Interactable
     }
     public void CloseButton()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
         notesPanel.SetActive(false);
+        Time.timeScale = 1f;
     }
     
 }
