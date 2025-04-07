@@ -12,9 +12,10 @@ public class PlayerController : MonoBehaviour
     Transform ori;
     Camera cam;
     bool isGrounded;
-    float speed = 5f;
-    float vertRotation = 0f;
-    float horiRotation = 0f;
+    [SerializeField]float speed = 5f;
+    [SerializeField] float sprintSpeed = 40f;
+    [SerializeField] float vertRotation = 0f;
+    [SerializeField] float horiRotation = 0f;
 
     void Start()
     {
@@ -48,12 +49,12 @@ public class PlayerController : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            speed = 10;
+            speed = sprintSpeed;
         }
 
         else
         {
-            speed = 5f;
+            speed = 10f;
         }
 
         Movement = Movement.normalized;

@@ -12,6 +12,7 @@ public class PlayerInteract : MonoBehaviour
     private LayerMask mask;
     private PlayerUI playerUI;
     [SerializeField] private GameObject prompt;
+    public static PlayerInteract Instance;
 
     void Start()
     {
@@ -21,7 +22,20 @@ public class PlayerInteract : MonoBehaviour
 
     }
 
-   
+    private void Awake()
+    {
+        // start of new code
+        if (Instance != null)
+        {
+
+            Destroy(gameObject);
+            return;
+        }
+        // end of new code
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
     void Update()
     {
         playerUI.UpdateText(string.Empty);

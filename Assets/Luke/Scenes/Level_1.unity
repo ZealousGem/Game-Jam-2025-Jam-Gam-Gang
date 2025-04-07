@@ -7714,6 +7714,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3927121026792574370, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4102520012571611761, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
       propertyPath: hasKeycard1
       value: 0

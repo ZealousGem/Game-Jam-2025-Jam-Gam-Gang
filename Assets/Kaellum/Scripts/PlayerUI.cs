@@ -5,6 +5,7 @@ public class PlayerUI : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI promptText;
+    private static PlayerUI Instance;
 
 
     //public Button QuitButton;
@@ -13,6 +14,22 @@ public class PlayerUI : MonoBehaviour
     void Start()
     {
         promptText = GameObject.FindGameObjectWithTag("Interact").GetComponent<TextMeshProUGUI>();
+
+    }
+
+    private void Awake()
+    {
+        // start of new code
+        if (Instance != null)
+        {
+           
+            Destroy(gameObject);
+            return;
+        }
+        // end of new code
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
