@@ -61,7 +61,7 @@ public class DialogueManager : MonoBehaviour
 
     }
 
-    void SkipDialogue()
+   public void SkipDialogue()
     {
         SceneManager.LoadScene(Nextscene);
     }
