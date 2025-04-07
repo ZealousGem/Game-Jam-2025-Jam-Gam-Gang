@@ -32,10 +32,7 @@ public class PlayerHeallth : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            RespawnState();
-        }
+       
     }
 
     public void Health()

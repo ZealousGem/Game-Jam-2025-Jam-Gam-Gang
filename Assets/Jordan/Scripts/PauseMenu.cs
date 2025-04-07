@@ -103,6 +103,8 @@ public class PauseMenu : MonoBehaviour
 
   public  void RestartCheckpoint()
     {
+        Checkpoints checking = GameObject.FindGameObjectWithTag("Respawn").GetComponent<Checkpoints>();
+        checking.Respawn();
         PlayerHeallth.instance.RespawnState();
         dead = false;
         DeathScr.SetActive(false);
