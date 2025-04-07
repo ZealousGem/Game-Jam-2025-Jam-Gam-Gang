@@ -10,6 +10,7 @@ public class PlayerHeallth : MonoBehaviour
 
     public float MaxHealth = 100f;
     public float currentHealth;
+    public bool isDamaged;
     Coroutine regenCor;
     Rigidbody rb;
     Collider col;
@@ -31,7 +32,10 @@ public class PlayerHeallth : MonoBehaviour
 
     private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            RespawnState();
+        }
     }
 
     public void Health()
@@ -41,6 +45,7 @@ public class PlayerHeallth : MonoBehaviour
     void Start()
     {
         currentHealth = MaxHealth;
+        isDamaged = false;
     }
 
     // Update is called once per frame
@@ -48,7 +53,7 @@ public class PlayerHeallth : MonoBehaviour
     {
         currentHealth -= dam * Time.deltaTime;
         currentHealth = Mathf.Clamp(currentHealth, 0, MaxHealth);
-
+        isDamaged = true;
         if (currentHealth <= 0)
         {
             currentHealth = 0;
@@ -59,6 +64,7 @@ public class PlayerHeallth : MonoBehaviour
 
         else
         {
+            
             if (regenCor != null) StopCoroutine(regenCor);
             regenCor = StartCoroutine(RegenHealth(1f, 10f));
         }
@@ -76,21 +82,29 @@ public class PlayerHeallth : MonoBehaviour
 
     public void SetDeathState(bool isdead)
     {
-        rb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
-        rb.isKinematic = !isdead;
+        PlayerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        if (player != null) { player.enabled = false; }
+       rb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+       // rb.isKinematic = !isdead;
+       // rb.useGravity = isdead;
+        rb.constraints = RigidbodyConstraints.None;
+        rb.AddForce(Vector3.right * 1f, ForceMode.Impulse);
 
         col = GameObject.FindGameObjectWithTag("Player").GetComponent<Collider>();
         col.enabled = isdead;
 
-        Camera cam = Camera.main;
-        if (isdead)
-        {
-            cam.transform.SetParent(rb.transform, false);
-        }
-       else
-        {
-            cam.transform.SetParent(null);
-        }
+       
+    }
+
+    public void RespawnState()
+    {
+        GameObject Playerrot = GameObject.FindGameObjectWithTag("Player");
+        Playerrot.transform.eulerAngles = Vector3.zero;
+        PlayerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        if (player != null) { player.enabled = true; }
+        rb = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
+        currentHealth = MaxHealth;
     }
 
 
