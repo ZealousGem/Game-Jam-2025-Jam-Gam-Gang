@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Kaellum/Start Menu.unity
+    guid: b679898d473724046aaf2724147dbf2a
   - enabled: 1
     path: Assets/Luke/Scenes/Level_1.unity
     guid: 32fa685d380d43d4aa7ee59e4acb5473
@@ -18,11 +18,17 @@ EditorBuildSettings:
     path: Assets/Luke/Scenes/Level_3.unity
     guid: 513149f1d3b2c00479fea7ce41cc1c63
   - enabled: 1
-    path: Assets/Kaellum/Start Menu.unity
-    guid: b679898d473724046aaf2724147dbf2a
-  - enabled: 1
     path: Assets/Kaellum/KaellumLVL1.unity
     guid: a305b5f94b9213941961238c6d606ca9
+  - enabled: 1
+    path: Assets/Jordan/JordanDialogue.unity
+    guid: 60d8906868cebb042bc92ec82b123bad
+  - enabled: 1
+    path: Assets/Jordan/EndingDialogue.unity
+    guid: 6686506af255d374f9da331f7ac3ece1
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

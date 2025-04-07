@@ -8146,6 +8146,10 @@ PrefabInstance:
       propertyPath: hasKeycard1
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4102520012571611761, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
+      propertyPath: hasKeycard3
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5769104026749946017, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
       propertyPath: prompt
       value: 
@@ -9924,8 +9928,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.5416548, y: 1, z: 0.56107414}
+  m_Center: {x: -0.4868153, y: 0, z: -0.19665082}
 --- !u!23 &1337068338
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -30,6 +30,26 @@
           "imageNo": "Scene4.png"
         }
       ]
+    },
+    {
+      "id": "2",
+      "Text": [
+        {
+          "texts": "You grabbed the Power Core too Quickly which caused it to explode"
+        },
+        {
+          "texts": "You blew up with the abonded facility, however despite the loud explosion. no one could hear you scream in the deep void of space"
+        }
+      ],
+      "images": [
+        {
+          "imageNo": "ExplosionStart.png"
+        },
+       
+        {
+          "imageNo": "ExplosionEnd.png"
+        }
+      ]
     }
   ]
 }
