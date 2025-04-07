@@ -13,6 +13,7 @@ TagManager:
   - Card3
   - Door2
   - Door3
+  - Interact
   layers:
   - Default
   - TransparentFX

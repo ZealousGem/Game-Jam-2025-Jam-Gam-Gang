@@ -3746,7 +3746,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 210247128908510758, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3632337906897369482, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6085,11 +6085,11 @@ GameObject:
   - component: {fileID: 1792010603}
   m_Layer: 5
   m_Name: Prompt Text
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1792010602
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6129,7 +6129,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -7334,7 +7334,7 @@ GameObject:
   - component: {fileID: 2050016456}
   m_Layer: 5
   m_Name: Prompt Text
-  m_TagString: Untagged
+  m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7712,6 +7712,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3632337906897369482, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102520012571611761, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
+      propertyPath: hasKeycard1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4102520012571611761, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
+      propertyPath: hasKeycard2
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5769104026749946017, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}

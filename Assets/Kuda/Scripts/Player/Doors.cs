@@ -3,7 +3,7 @@ using UnityEngine;
 public class Doors : MonoBehaviour
 {
     public bool isOpen = false;
-    public PlayerKeyCards playerKeyCards;
+    PlayerKeyCards playerKeyCards;
     Collider DoorColl;
 
     public SceneManagement sceneManagement;
@@ -11,6 +11,7 @@ public class Doors : MonoBehaviour
 
     private void Start()
     {
+        playerKeyCards = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerKeyCards>();
         DoorColl = GetComponent<Collider>();
        
     }

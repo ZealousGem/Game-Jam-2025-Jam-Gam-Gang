@@ -1,5 +1,5 @@
 using TMPro;
-using UnityEditor.PackageManager;
+//using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -17,13 +17,15 @@ public class PlayerInteract : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         playerUI = GetComponent<PlayerUI>();
+        prompt = GameObject.FindGameObjectWithTag("Interact");
+
     }
 
    
     void Update()
     {
         playerUI.UpdateText(string.Empty);
-
+       
         RayCasting();
         //creates ray to detect colliders based on set distance
     
