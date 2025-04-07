@@ -17,10 +17,12 @@ public class Minigame : MonoBehaviour
     public int OtherElementValue;
     public Image usedImage;
     public Sprite[] image;
-    private bool unlocked = false; 
+    private bool unlocked = false;
+    public GameObject keycard;
 
     private void Start()
     {
+        keycard.SetActive(false);
         unlocked = false;
         SliderPercentage();
         usedImage.overrideSprite = image[0];
@@ -52,6 +54,7 @@ public class Minigame : MonoBehaviour
 
             unlocked = true;
             usedImage.overrideSprite = image[1];
+            keycard.SetActive(true);
         }
         else
         {
