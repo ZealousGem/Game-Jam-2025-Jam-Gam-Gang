@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class InteractableObject : MonoBehaviour
 {
@@ -43,6 +44,10 @@ public class InteractableObject : MonoBehaviour
 
     public void TakePowerCore()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        SceneManager.LoadScene("SampleScene");
         Debug.Log("good ending");
     }
 }

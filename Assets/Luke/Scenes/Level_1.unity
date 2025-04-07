@@ -208,134 +208,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3085363274040914755, guid: 9fb1bbdf017334c419ef49ef14b8762c, type: 3}
   m_PrefabInstance: {fileID: 441051089}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &29412252
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 29412257}
-  - component: {fileID: 29412256}
-  - component: {fileID: 29412255}
-  - component: {fileID: 29412254}
-  - component: {fileID: 29412253}
-  m_Layer: 6
-  m_Name: Notes
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &29412253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29412252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c701ada308c783041b32e69fe11534e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  promptmessage: 
-  notesText:
-  - {fileID: 88249996}
-  - {fileID: 39395704}
-  - {fileID: 1497674964}
-  notesPanel: {fileID: 476304905}
-  noteScriptable: {fileID: 11400000, guid: e2d25b35e6eb59b489e588d2bbbb3b24, type: 2}
---- !u!65 &29412254
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29412252}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &29412255
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29412252}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &29412256
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29412252}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &29412257
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29412252}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18, y: 0.5, z: 20.6}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &39395701
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,7 +1577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &476304906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5285,7 +5157,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 29412253}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Notes, Assembly-CSharp
         m_MethodName: CloseButton
         m_Mode: 1
@@ -7720,16 +7592,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4102520012571611761, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
       propertyPath: hasKeycard1
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4102520012571611761, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
       propertyPath: hasKeycard2
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5769104026749946017, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
       propertyPath: prompt
       value: 
       objectReference: {fileID: 2050016454}
+    - target: {fileID: 8112267707482253655, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8967628256564234100, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
       propertyPath: promptText
       value: 
@@ -7811,5 +7687,4 @@ SceneRoots:
   - {fileID: 784909442}
   - {fileID: 594476295}
   - {fileID: 2041652850}
-  - {fileID: 29412257}
   - {fileID: 1765521341}

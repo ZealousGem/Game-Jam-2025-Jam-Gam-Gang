@@ -23,6 +23,10 @@ public class Doors : MonoBehaviour
             {
                 DoorColl.isTrigger = true;
                 sceneManagement.GoToLevel2();
+                PlayerUI playerUI = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerUI>();
+                playerUI.enabled = false;
+                PlayerInteract interaction = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerInteract>();
+                interaction.enabled = false;
 
             }
             else
