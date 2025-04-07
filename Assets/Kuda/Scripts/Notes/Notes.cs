@@ -8,7 +8,6 @@ public class Notes : Interactable
     [SerializeField] NoteScriptableObject noteScriptable;
     int click = 0;
 
-    public Button closeButton;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,35 +23,44 @@ public class Notes : Interactable
             Qcount++;
         }
     }
+    
     protected override void Interact()
     {
+        notesPanel.SetActive(true);
         switch (click)
         {
+             
             case 0:
                 notesPanel.SetActive(true);
                 notesText[0].gameObject.SetActive(true);
                 notesText[1].gameObject.SetActive(false);
                 notesText[2].gameObject.SetActive(false);
+                click = 1;
                 break;
             case 1:
                 notesPanel.SetActive(true);
                 notesText[0].gameObject.SetActive(false);
                 notesText[1].gameObject.SetActive(true);
                 notesText[2].gameObject.SetActive(false);
+                click = 2;
                 break;
             case 2:
                 notesPanel.SetActive(true);
                 notesText[0].gameObject.SetActive(false);
                 notesText[1].gameObject.SetActive(false);
                 notesText[2].gameObject.SetActive(true);
+                click = 0;
                 break;
         }
-        notesPanel.SetActive(true);
+       
     }
-    
+    private void Awake()
+    {
+        notesPanel.SetActive(false);
+    }
     public void CloseButton()
     {
-        
+        notesPanel.SetActive(false);
     }
     
 }
