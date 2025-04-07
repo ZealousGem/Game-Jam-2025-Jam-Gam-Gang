@@ -6,6 +6,8 @@ public class ExplosionTimer : MonoBehaviour
 
     public static ExplosionTimer Instance { get; private set; }
     public bool beginTime;
+   public bool startExpo;
+    public bool endSeq;
     public int timer { private set; get; }
 
     [SerializeField]
@@ -25,6 +27,8 @@ public class ExplosionTimer : MonoBehaviour
     }
     void Start()
     {
+        endSeq = false;
+        startExpo = false;
         beginTime = false;
     }
 

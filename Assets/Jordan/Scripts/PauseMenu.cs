@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
+using UnityEngine.Events;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -8,13 +10,25 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuScr;
     bool isPaused;
     bool dead;
+    public UnityEvent itHappens;
     public GameObject DeathScr;
-    
-    void Start()
+    public GameObject ExplosionUI;
+    public TMP_Text TimeText;
+  //  public TMP_Text objText;
+        void Start()
     {
         PauseMenuScr.SetActive(false);
         isPaused = false;
         DeathScr.SetActive(false);
+        //ExplosionTimer.Instance.AddListener(OnExplosionStart);
+
+        switch (ExplosionTimer.Instance.beginTime)
+        {
+            case true: ExplosionUI.SetActive(true); break;
+            case false: ExplosionUI.SetActive(false); break;
+
+        }
+       
         dead = false;
     }
 
@@ -39,6 +53,25 @@ public class PauseMenu : MonoBehaviour
             dead = true;
             StartCoroutine(DeathUI());
         }
+
+
+        if (ExplosionTimer.Instance.beginTime && !ExplosionTimer.Instance.startExpo && !ExplosionUI.activeSelf)
+        {
+            //    StartCoroutine(expUI());
+            ExplosionTimer.Instance.startExpo = true;
+             itHappens?.Invoke();
+        }
+
+        if (ExplosionUI.activeSelf && ExplosionTimer.Instance.endSeq)
+        {
+            Timing();
+        }
+
+    }
+
+    public void turonUI()
+    {
+        StartCoroutine(expUI());
     }
 
     void PauseGame()
@@ -76,6 +109,23 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
+    }
+
+    public void Timing()
+    {
+        TimeText.text = ExplosionTimer.Instance.timer.ToString();
+    }
+
+   public IEnumerator expUI()
+    {
+      //  ExplosionTimer.Instance.startExpo = false;
+        ExplosionUI.SetActive(true);
+        TimeText.text = "Self Destruction imminent";
+        yield return new WaitForSeconds(2f);
+        TimeText.text = "Run!!!!";
+        yield return new WaitForSeconds(5f);
+        ExplosionTimer.Instance.endSeq = true;
+        Timing();
     }
 
    public void QuitLevel()
