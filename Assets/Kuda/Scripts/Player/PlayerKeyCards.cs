@@ -1,13 +1,17 @@
 using Unity.Mathematics;
 using UnityEngine;
 
-public class PlayerKeyCards : MonoBehaviour
+public class PlayerKeyCards : Interactable
 {
     public bool hasKeycard1 = false;
     public bool hasKeycard2 = false;
     public bool hasKeycard3 = false;
-
-    private void OnCollisionEnter(Collision other)
+    GameObject other;
+    private void Start()
+    {
+        other = GameObject.Find("Card");
+    }
+    protected override void Interact()
     {
 
         if (other.gameObject.CompareTag("Card1"))

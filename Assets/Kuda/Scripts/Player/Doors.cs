@@ -6,6 +6,9 @@ public class Doors : MonoBehaviour
     public PlayerKeyCards playerKeyCards;
     Collider DoorColl;
 
+    public SceneManagement sceneManagement;
+    
+
     private void Start()
     {
         DoorColl = GetComponent<Collider>();
@@ -18,10 +21,12 @@ public class Doors : MonoBehaviour
             if ((other.gameObject.CompareTag("Player")) && playerKeyCards.hasKeycard1 == true)
             {
                 DoorColl.isTrigger = true;
+
             }
             else
             {
                 DoorColl.isTrigger = false;
+                Debug.Log("No KeyCard");
             }
         }
 
@@ -34,6 +39,7 @@ public class Doors : MonoBehaviour
             else
             {
                 DoorColl.isTrigger = false;
+                Debug.Log("No KeyCard");
             }
         }
 
@@ -46,6 +52,7 @@ public class Doors : MonoBehaviour
             else
             {
                 DoorColl.isTrigger = false;
+                Debug.Log("No KeyCard");
             }
         }
     }
@@ -77,5 +84,7 @@ public class Doors : MonoBehaviour
             }
         }
     }
+
+ 
 
 }
