@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
@@ -5,11 +6,16 @@ public class PauseMenu : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public GameObject PauseMenuScr;
-    bool isPaused; 
+    bool isPaused;
+    bool dead;
+    public GameObject DeathScr;
+    
     void Start()
     {
         PauseMenuScr.SetActive(false);
         isPaused = false;
+        DeathScr.SetActive(false);
+        dead = false;
     }
 
     // Update is called once per frame
@@ -26,6 +32,12 @@ public class PauseMenu : MonoBehaviour
             {
                 ResumeGame();
             }
+        }
+
+        if (PlayerHeallth.instance.currentHealth == 0 && !dead)
+        {
+            dead = true;
+            StartCoroutine(DeathUI());
         }
     }
 
@@ -47,8 +59,22 @@ public class PauseMenu : MonoBehaviour
         Cursor.visible = false;
     }
 
+    public IEnumerator DeathUI()
+    {
+        yield return new WaitForSeconds(2f);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        DeathScr.SetActive(true);
+
+    }
+
   public  void RestartCheckpoint()
     {
+        PlayerHeallth.instance.RespawnState();
+        dead = false;
+        DeathScr.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
     }
 
