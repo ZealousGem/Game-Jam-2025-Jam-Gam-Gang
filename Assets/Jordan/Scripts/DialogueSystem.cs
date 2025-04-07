@@ -21,7 +21,7 @@ public class DialogueSystem : MonoBehaviour
     public Image image;
 
     public List<string> login;
-    public TMP_Text Charname;
+   
     public bool isAutomatic;
     public TMP_Text description;
     public int counter = 0;
@@ -169,7 +169,7 @@ public class DialogueSystem : MonoBehaviour
 
     void EndDialogue() // will end the dialogue by setting bool to false allowing the for loop in dialogue manager to move the i to the next position
     {
-        Charname.text = "";
+        
         description.text = "";
         end = true;
         counter = 0;

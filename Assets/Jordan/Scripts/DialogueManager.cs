@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -62,6 +63,6 @@ public class DialogueManager : MonoBehaviour
 
     void SkipDialogue()
     {
-
+        SceneManager.LoadScene(Nextscene);
     }
 }

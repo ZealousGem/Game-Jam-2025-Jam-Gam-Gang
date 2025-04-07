@@ -16,7 +16,7 @@ public class DialogueInfo : MonoBehaviour
     public IEnumerator LoadData()
     {
 
-        string filepath = Path.Combine(Application.streamingAssetsPath, "JSONText.txt"); // will find Json file through the streaming assets folder 
+        string filepath = Path.Combine(Application.streamingAssetsPath, "Dialogue.txt"); // will find Json file through the streaming assets folder 
 
         if (System.IO.File.Exists(filepath)) // checks if the the josn file exisits 
         {
@@ -68,6 +68,7 @@ public class StoryText
    
 }
 
+[System.Serializable]
 public class StoryImages
 {
 
