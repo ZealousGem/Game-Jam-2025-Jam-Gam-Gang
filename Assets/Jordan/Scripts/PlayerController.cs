@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]float speed = 10f;
     [SerializeField] float sprintSpeed = 20f;
     [SerializeField] float vertRotation = 0f;
-    [SerializeField] float horiRotation = 0f;
+   // [SerializeField] float horiRotation = 0f;
 
     void Start()
     {
@@ -24,13 +24,20 @@ public class PlayerController : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         ori = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        Application.targetFrameRate = 60;
+    }
 
+    private void Update()
+    {
+        InputKey();
+        LookAround();
     }
     private void FixedUpdate()
     {
-        InputKey();
+       
         MovementH();
     }
+
 
     void InputKey()
     {
@@ -46,15 +53,7 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
             rb.AddForce(new Vector3(rb.linearVelocity.x, 5f, 0f), ForceMode.Impulse);
         }
-       /* if (Input.GetKey(KeyCode.LeftShift))
-        {
-            speed = sprintSpeed;
-        }
-
-        else
-        {
-            speed = 10f;
-        }*/
+      
 
         Movement = Movement.normalized;
 
@@ -64,19 +63,25 @@ public class PlayerController : MonoBehaviour
     void MovementH()
     {
 
-        Debug.Log("moving");
+       // Debug.Log("moving");
         if (rb != null)
         {
             Vector3 movingDir = (ori.forward * Movement.z + ori.right * Movement.x).normalized;
             rb.MovePosition(rb.position + movingDir.normalized * speed * Time.fixedDeltaTime);
         }
 
-        Debug.Log("rotating");
+    }
+
+    void LookAround()
+    {
+        //  Debug.Log("rotating");
         vertRotation -= LookingAround.y * Time.deltaTime * 100f;
         vertRotation = Mathf.Clamp(vertRotation, -90f, 90f);
 
-        horiRotation = LookingAround.x * Time.deltaTime * 100f;
-        transform.Rotate(0f, horiRotation, 0f);
+
+        transform.Rotate(0f, LookingAround.x * Time.deltaTime * 100f, 0f);
+        //  Debug.Log("Horizontal Y Rotation: " + transform.eulerAngles.y);
+
 
         cam.transform.localRotation = Quaternion.Euler(vertRotation, 0f, 0f);
     }

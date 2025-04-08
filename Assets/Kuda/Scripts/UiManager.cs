@@ -4,15 +4,45 @@ using UnityEngine.UI;
 public class UiManager : MonoBehaviour
 {
     public GameObject minigame;
+    public GameObject pcUI;
+    
    
     private void Start()
     {
         //desktopScreen.SetActive(true);
         minigame.SetActive(false);
+        pcUI.SetActive(false);
         
     }
 
-   public void SelectMiniGame()
+    private void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+
+                Camera cam = Camera.main;
+                Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit, 10f) )
+                {
+                  if (hit.transform == transform)
+                  {
+                    SelectMiniGame();
+                  }
+                   
+
+                }
+            
+            
+           
+
+        }
+
+       
+    }
+
+    public void SelectMiniGame()
     {
        
         minigame.SetActive(true);
@@ -21,25 +51,37 @@ public class UiManager : MonoBehaviour
        
     }
 
-
+    
 
     private void OnTriggerStay(Collider other)
     {
-        
-        if (Input.GetKeyDown(KeyCode.E) && other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            SelectMiniGame();
+            pcUI.SetActive(true);
+            
+        }
+
+       
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            pcUI.SetActive(false);
+            
         }
     }
 
-    
+
 
 
     public void CloseApp()
     {
         
         minigame.SetActive(false);
-        Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
     }
