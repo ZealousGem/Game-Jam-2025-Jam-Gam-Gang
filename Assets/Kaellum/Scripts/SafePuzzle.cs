@@ -1,7 +1,5 @@
 using UnityEngine;
 using TMPro;
-using UnityEditor.Rendering.LookDev;
-
 public class SafePuzzle : MonoBehaviour
 {
     [SerializeField]

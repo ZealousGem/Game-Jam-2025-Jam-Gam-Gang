@@ -1,0 +1,55 @@
+{
+  "Cuts": [
+    {
+      "id": "1",
+      "Text": [
+        {
+          "texts": "In the Ends of Space, an Astronaut navigates the cosmos. Finding new planets to discover"
+        },
+        {
+          "texts": "However after Travelling for so long. his lack of fuel caught up to him. In Desperation, the astronaut tries to find an incoming planet to land"
+        },
+        {
+          "texts": "He Luckily finds an aloof asteroid drifting through space. With no Available options, the astronaugt decides to land"
+        },
+        {
+          "texts": "Taking out his energy tracker. He notices that there is a Power Core Located on this asteroid, following, the tracker. It leads to an abandonded facility, he must venture inside to find the power"
+        }
+      ],
+      "images": [
+        {
+          "imageNo": "Scene1.png"
+        },
+        {
+          "imageNo": "Scene2.png"
+        },
+        {
+          "imageNo": "Scene3.png"
+        },
+        {
+          "imageNo": "Scene4.png"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "Text": [
+        {
+          "texts": "You grabbed the Power Core too Quickly which caused it to explode"
+        },
+        {
+          "texts": "You blew up with the abonded facility, however despite the loud explosion. no one could hear you scream in the deep void of space"
+        }
+      ],
+      "images": [
+        {
+          "imageNo": "ExplosionStart.png"
+        },
+       
+        {
+          "imageNo": "ExplosionEnd.png"
+        }
+      ]
+    }
+  ]
+}
