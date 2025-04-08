@@ -20,10 +20,7 @@ public class PickUpObject : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-
-        
-
+    {      
         if (Input.GetKeyDown(KeyCode.E))
         {
             if (picked)
@@ -51,8 +48,6 @@ public class PickUpObject : MonoBehaviour
                 }
             }
         }
-        
-        
     }
 
     private void OnTriggerEnter(Collider other)

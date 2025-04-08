@@ -30,7 +30,6 @@ public class PlayerController : MonoBehaviour
     {
         InputKey();
         MovementH();
-
     }
 
     void InputKey()
@@ -73,10 +72,10 @@ public class PlayerController : MonoBehaviour
         }
 
         Debug.Log("rotating");
-        vertRotation -= LookingAround.y * Time.fixedDeltaTime * 100f;
+        vertRotation -= LookingAround.y * Time.deltaTime * 100f;
         vertRotation = Mathf.Clamp(vertRotation, -90f, 90f);
 
-        horiRotation = LookingAround.x * Time.fixedDeltaTime * 100f;
+        horiRotation = LookingAround.x * Time.deltaTime * 100f;
         transform.Rotate(0f, horiRotation, 0f);
 
         cam.transform.localRotation = Quaternion.Euler(vertRotation, 0f, 0f);
@@ -90,6 +89,4 @@ public class PlayerController : MonoBehaviour
 
         }
     }
-
-
 }

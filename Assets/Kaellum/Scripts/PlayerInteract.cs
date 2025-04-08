@@ -38,13 +38,15 @@ public class PlayerInteract : MonoBehaviour
     }
     void Update()
     {
-        playerUI.UpdateText(string.Empty);
-       
+        playerUI.UpdateText(string.Empty);        
+    }
+
+    private void FixedUpdate()
+    {
         RayCasting();
         //creates ray to detect colliders based on set distance
-    
     }
-    
+
     void KeyInteract(Interactable interactable,RaycastHit hit)
     {
 
