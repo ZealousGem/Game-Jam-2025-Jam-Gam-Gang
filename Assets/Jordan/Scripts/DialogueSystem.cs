@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine.Sprites;
 using UnityEngine.Rendering.VirtualTexturing;
 using UnityEngine.TextCore.Text;
+using UnityEngine.SceneManagement;
 using System.IO;
 using TMPro;
 
@@ -31,6 +32,17 @@ public class DialogueSystem : MonoBehaviour
 
     private void Start()
     {
+        try
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+           
+            if (player != null)
+            {
+                Destroy(player);
+            }
+        }
+
+        catch { }
         Dialogue.SetActive(false);
         lines = new Queue<string>(); // creates a Queue string for the dialogue 
         images = new Queue<Sprite>(); // creates Queue sprite for images

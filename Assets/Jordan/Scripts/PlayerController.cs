@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     Transform ori;
     Camera cam;
     bool isGrounded;
-    [SerializeField]float speed = 5f;
-    [SerializeField] float sprintSpeed = 40f;
+    [SerializeField]float speed = 10f;
+    [SerializeField] float sprintSpeed = 20f;
     [SerializeField] float vertRotation = 0f;
     [SerializeField] float horiRotation = 0f;
 
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
             isGrounded = false;
             rb.AddForce(new Vector3(rb.linearVelocity.x, 5f, 0f), ForceMode.Impulse);
         }
-        if (Input.GetKey(KeyCode.LeftShift))
+       /* if (Input.GetKey(KeyCode.LeftShift))
         {
             speed = sprintSpeed;
         }
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             speed = 10f;
-        }
+        }*/
 
         Movement = Movement.normalized;
 

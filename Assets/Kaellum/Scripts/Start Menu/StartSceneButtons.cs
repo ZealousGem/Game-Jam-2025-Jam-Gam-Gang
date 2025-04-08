@@ -7,7 +7,7 @@ public class StartSceneButtons : MonoBehaviour
     private GameObject Press;
    public void PlayGame()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(5);
         //SceneManager.SetActiveScene(SceneManager.GetSceneByName("Kaellum"));
     }
 
@@ -23,6 +23,23 @@ public class StartSceneButtons : MonoBehaviour
 
     public void quitMenu()
     {
+       
         Press.SetActive(false);
+    }
+
+    private void Start()
+    {
+        try
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                Destroy(player);
+            }
+        }
+        
+        catch { }
+
+        
     }
 }

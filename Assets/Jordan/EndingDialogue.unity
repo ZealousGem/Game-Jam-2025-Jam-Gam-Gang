@@ -5570,7 +5570,7 @@ MonoBehaviour:
   name:
   - 2
   info: {fileID: 2117925465}
-  Nextscene: Level_1
+  Nextscene: Start Menu
 --- !u!1 &2119051782
 GameObject:
   m_ObjectHideFlags: 0

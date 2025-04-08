@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -132,6 +133,14 @@ public class PauseMenu : MonoBehaviour
 
    public void QuitLevel()
     {
-        
+        /*GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            Destroy(player);
+        }*/
+        SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
+        isPaused = false;
+        PauseMenuScr.SetActive(false);
     }
 }

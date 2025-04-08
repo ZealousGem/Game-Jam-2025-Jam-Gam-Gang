@@ -12,6 +12,9 @@ public class DialogueManager : MonoBehaviour
     public string Nextscene;
     void Start()
     {
+       
+
+
         if (info != null)
         {
             StartCoroutine(LoadDialogue());// creates a couritnne so data can load before dialogue is implemented

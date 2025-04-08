@@ -46,12 +46,7 @@ public class InteractableObject : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
         SceneManager.LoadScene("EndingDialogue");
-        if (player != null)
-        {
-            Destroy(player);
-        }
         Debug.Log("good ending");
     }
 }
