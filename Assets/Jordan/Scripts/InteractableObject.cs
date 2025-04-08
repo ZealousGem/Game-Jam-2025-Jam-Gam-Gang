@@ -6,7 +6,7 @@ public class InteractableObject : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-
+    public GameObject UI;
     public UnityEvent Interact;
     bool Playerishere;
     
@@ -20,10 +20,16 @@ public class InteractableObject : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        UI.SetActive(false);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            UI.SetActive(true);
             Playerishere = true;
         }
     }
@@ -32,6 +38,7 @@ public class InteractableObject : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            UI.SetActive(false);
             Playerishere = false;
         }
     }
