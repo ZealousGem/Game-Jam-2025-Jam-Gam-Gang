@@ -12,11 +12,13 @@ public class Safe : Interactable
     [SerializeField] private GameObject Quit;
     [SerializeField] private GameObject numChange;
     [SerializeField] private GameObject SafePanel;
+    [SerializeField] private GameObject UI;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        UI.SetActive(false);
         Quit.SetActive(false);
         SafePanel.SetActive(false);
         numChange.SetActive(false);
@@ -46,6 +48,27 @@ public class Safe : Interactable
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            UI.SetActive(true);
+
+        }
+
+
+
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            UI.SetActive(false);
+
+        }
     }
 
 }
