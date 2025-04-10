@@ -5,7 +5,10 @@ public class StartSceneButtons : MonoBehaviour
 {
     [SerializeField]
     private GameObject Press;
-   public void PlayGame()
+    [SerializeField]
+    private GameObject Menu;
+
+    public void PlayGame()
     {
         SceneManager.LoadScene(5);
         //SceneManager.SetActiveScene(SceneManager.GetSceneByName("Kaellum"));
@@ -13,7 +16,8 @@ public class StartSceneButtons : MonoBehaviour
 
     public void Options()
     {
-       Press.SetActive(true);
+        Menu.SetActive(false);
+        Press.SetActive(true);
     }
 
     public void QuitGame()
@@ -23,7 +27,7 @@ public class StartSceneButtons : MonoBehaviour
 
     public void quitMenu()
     {
-       
+        Menu.SetActive(true);
         Press.SetActive(false);
     }
 
@@ -42,4 +46,6 @@ public class StartSceneButtons : MonoBehaviour
 
         
     }
+
+    
 }
