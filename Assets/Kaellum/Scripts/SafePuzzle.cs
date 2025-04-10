@@ -13,7 +13,7 @@ public class SafePuzzle : MonoBehaviour
     [SerializeField] private GameObject numChange;
     [SerializeField] private GameObject SafePanel;
     [SerializeField] private GameObject card;
-
+    private bool isSolved;
 
     public int CodePiece1 = 0;
     public int CodePiece2 = 0;
@@ -21,7 +21,7 @@ public class SafePuzzle : MonoBehaviour
 
     void Start()
     {
-        
+        isSolved = false;
         card.SetActive(false);
         
 
@@ -59,10 +59,11 @@ public class SafePuzzle : MonoBehaviour
         if (number1 == CodePiece1 && number2 == CodePiece2 && number3 == CodePiece3)
         {
             Debug.Log("Solve Puzzle");
-            card.SetActive(true);
+            if (!isSolved) card.SetActive(true);
             Quiter.SetActive(false);
             SafePanel.SetActive(false);
             numChange.SetActive(false);
+            isSolved=true;
 
             Time.timeScale = 1;
 

@@ -44,7 +44,8 @@ public class UiManager : MonoBehaviour
 
     public void SelectMiniGame()
     {
-       
+        PlayerController Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        Player.enabled = false;
         minigame.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -79,7 +80,8 @@ public class UiManager : MonoBehaviour
 
     public void CloseApp()
     {
-        
+        PlayerController Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        Player.enabled = true;
         minigame.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
