@@ -8,6 +8,7 @@ public class ExplosionTimer : MonoBehaviour
     public bool beginTime;
    public bool startExpo;
     public bool endSeq;
+    public float MouseSnesitivity;
     public int timer { private set; get; }
 
     [SerializeField]

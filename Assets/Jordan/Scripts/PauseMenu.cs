@@ -3,6 +3,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using NUnit.Framework;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -11,9 +12,12 @@ public class PauseMenu : MonoBehaviour
     public GameObject PauseMenuScr;
     bool isPaused;
     bool dead;
+    bool safeUI;
     public UnityEvent itHappens;
+    public GameObject objUI;
     public GameObject DeathScr;
     public GameObject ExplosionUI;
+    public TMP_Text ObjText;
     public TMP_Text TimeText;
   //  public TMP_Text objText;
         void Start()
@@ -21,6 +25,7 @@ public class PauseMenu : MonoBehaviour
         PauseMenuScr.SetActive(false);
         isPaused = false;
         DeathScr.SetActive(false);
+        objUI.SetActive(false);
         //ExplosionTimer.Instance.AddListener(OnExplosionStart);
 
         switch (ExplosionTimer.Instance.beginTime)
@@ -29,8 +34,33 @@ public class PauseMenu : MonoBehaviour
             case false: ExplosionUI.SetActive(false); break;
 
         }
-       
+        if (PlayerKeyCards.Instance.hasKeycard1 != true)
+        {
+            StartCoroutine(Obj());
+            safeUI = true;
+        }
         dead = false;
+    }
+
+      public IEnumerator Obj()
+      {
+        yield return new WaitForSeconds(0.3f);
+        objUI.SetActive(true);
+        ObjText.text = "Retrieve Power Core";
+         yield return new WaitForSeconds(3f);
+         objUI.SetActive(false);
+        
+ 
+      }
+
+    public IEnumerator SuccessException()
+    {
+        safeUI = false;
+        yield return new WaitForSeconds(0.3f);
+        objUI.SetActive(true);
+        ObjText.text = "Safe Unlocked, KeyCard Obtained";
+        yield return new WaitForSeconds(1f);
+        objUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -66,6 +96,12 @@ public class PauseMenu : MonoBehaviour
         if (ExplosionUI.activeSelf && ExplosionTimer.Instance.endSeq)
         {
             Timing();
+        }
+
+        if (PlayerKeyCards.Instance.hasKeycard1 == true && safeUI == true)
+        {
+            StartCoroutine((SuccessException()));
+            
         }
 
     }
