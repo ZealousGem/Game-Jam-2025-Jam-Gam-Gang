@@ -22,6 +22,12 @@ public class VolumeSlider : MonoBehaviour
 
 
     }
+
+    private void Start()
+    {
+        Mousesensitivty = 100f;
+        MouseSensitivity.instance.Amount = Mousesensitivty;
+    }
     public void VolumeMusic()
     {
        // AudioManager.instance.MusicVolumeAmount(Slider.value);
@@ -36,6 +42,7 @@ public class VolumeSlider : MonoBehaviour
     {
 
         Mousesensitivty = Slider.value;
+        MouseSensitivity.instance.Amount = Mousesensitivty;
         amount = GameObject.FindGameObjectWithTag("Mouse").GetComponent<TMP_Text>();
         int display = (int)Mousesensitivty;
         amount.text = display.ToString();

@@ -27,6 +27,19 @@ public class Sound
         source.loop = loop;
     }
 
+    public void SetVolume(float vol)
+    {
+        if (source != null)
+        {
+            source.volume = vol;
+        }
+    }
+
+    public void Stop()
+    {
+        source.Stop();
+    }
+
     public void Play()
     {
         source.Play();
@@ -74,9 +87,43 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
-    // Update is called once per frame
-    void Update()
+
+    public void StopMusic(string name)
     {
-      
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].nameClip == name)
+            {
+                sounds[i].Stop();
+                return;
+            }
+        }
     }
+
+    public void VolumeAmount(float vol)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].loop == false)
+            {
+                //  sounds[i].Play();
+                sounds[i].SetVolume(vol);
+              //  sounds.so
+            }
+        }
+    }
+    public void MusicAmount(float vol)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].loop == true)
+            {
+                //  sounds[i].Play();
+                sounds[i].SetVolume(vol);
+                //  sounds.so
+            }
+        }
+    }
+    // Update is called once per frame
+   
 }

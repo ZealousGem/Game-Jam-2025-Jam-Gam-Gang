@@ -29128,6 +29128,10 @@ PrefabInstance:
       propertyPath: hasKeycard2
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5605850848964951452, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5769104026749946017, guid: 8f9d01615008fad46b8fd8c8d5d0bdbc, type: 3}
       propertyPath: prompt
       value: 

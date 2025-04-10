@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     Transform ori;
     Camera cam;
     bool isGrounded;
+    float MouseSpeed;
     [SerializeField]float speed = 10f;
     [SerializeField] float sprintSpeed = 20f;
     [SerializeField] float vertRotation = 0f;
@@ -19,6 +20,16 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        try
+        {
+            MouseSpeed = MouseSensitivity.instance.Amount;
+        }
+
+        catch {
+
+            MouseSpeed = 100f;
+
+        }
         rb = GetComponent<Rigidbody>();
         cam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         Cursor.visible = false;
@@ -75,11 +86,11 @@ public class PlayerController : MonoBehaviour
     void LookAround()
     {
         //  Debug.Log("rotating");
-        vertRotation -= LookingAround.y * Time.deltaTime * 100f;
+        vertRotation -= LookingAround.y * Time.deltaTime * MouseSpeed;
         vertRotation = Mathf.Clamp(vertRotation, -90f, 90f);
 
 
-        transform.Rotate(0f, LookingAround.x * Time.deltaTime * 100f, 0f);
+        transform.Rotate(0f, LookingAround.x * Time.deltaTime * MouseSpeed, 0f);
         //  Debug.Log("Horizontal Y Rotation: " + transform.eulerAngles.y);
 
 

@@ -28,12 +28,12 @@ public class PauseMenu : MonoBehaviour
         objUI.SetActive(false);
         //ExplosionTimer.Instance.AddListener(OnExplosionStart);
 
-        switch (ExplosionTimer.Instance.beginTime)
+       switch (ExplosionTimer.Instance.beginTime)
         {
             case true: ExplosionUI.SetActive(true); break;
             case false: ExplosionUI.SetActive(false); break;
 
-        }
+        } 
         if (PlayerKeyCards.Instance.hasKeycard1 != true)
         {
             StartCoroutine(Obj());
