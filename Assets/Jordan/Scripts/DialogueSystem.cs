@@ -3,7 +3,6 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Sprites;
-using UnityEngine.Rendering.VirtualTexturing;
 using UnityEngine.TextCore.Text;
 using UnityEngine.SceneManagement;
 using System.IO;
