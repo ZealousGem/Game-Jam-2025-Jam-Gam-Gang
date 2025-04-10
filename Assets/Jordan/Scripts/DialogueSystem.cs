@@ -136,6 +136,11 @@ public class DialogueSystem : MonoBehaviour
 
     public void DisplayNextSentence() // this method is activated by the next button input
     {
+        try
+        {
+            AudioManager.Instance.PlaySound("text");
+        }
+        catch { }
         //Debug.Log("next dialogue");
         if (lines.Count == 0) // if all the elements have been dequed the dailogue will end
         {
@@ -152,6 +157,7 @@ public class DialogueSystem : MonoBehaviour
         Button.SetActive(false);
         StartCoroutine(TypeDialogue(sentence)); // displays the dialogue text in a courtieine to have text pop up in a timed sequence 
         login.Add(sentence);
+       
         counter += 1; // keeps track fo the front position element in the queue
 
     }
@@ -159,11 +165,24 @@ public class DialogueSystem : MonoBehaviour
     public IEnumerator TypeDialogue(string sentence)
     {
         description.text = "";
+        
         foreach (var T in sentence.ToCharArray()) // will loop the text string through it's characters
         {
+            try
+            {
+                AudioManager.Instance.PlaySound("type");
+            }
+            catch { }
             description.text += T; // will dsiplay each character at a certain timed update to create dialogue text animation 
             yield return new WaitForSeconds(0.03f);
+            
+
         }
+        try
+        {
+            AudioManager.Instance.StopMusic("type");
+        }
+        catch { }
 
         if (isAutomatic) // bool will check if the dialogue is an automatic for the button not to be displayed
         {

@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -42,6 +43,7 @@ public class Sound
 
     public void Play()
     {
+        Debug.Log("Playing sound: " + nameClip);
         source.Play();
     }
 }
@@ -73,7 +75,9 @@ public class AudioManager : MonoBehaviour
             GameObject play = new GameObject("Sound : " + i + " : " + sounds[i].nameClip);
             play.transform.SetParent(this.transform);
             sounds[i].setSource(play.AddComponent<AudioSource>());
-        } 
+        }
+
+        PlaySound("theme");
     }
 
     public void PlaySound(string name)
@@ -124,6 +128,8 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+
+    
     // Update is called once per frame
    
 }

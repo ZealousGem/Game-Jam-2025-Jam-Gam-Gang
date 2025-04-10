@@ -66,6 +66,15 @@ public class DialogueManager : MonoBehaviour
 
    public void SkipDialogue()
     {
+        try
+        {
+            AudioManager.Instance.PlaySound("text");
+        }
+        catch { }
+
+        try { AudioManager.Instance.StopMusic("dialogue"); }
+
+        catch { }
         SceneManager.LoadScene(Nextscene);
     }
 }

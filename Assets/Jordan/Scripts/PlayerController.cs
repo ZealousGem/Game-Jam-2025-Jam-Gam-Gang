@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     Transform ori;
     Camera cam;
     bool isGrounded;
+    bool walk = false;
     float MouseSpeed;
     [SerializeField]float speed = 10f;
     [SerializeField] float sprintSpeed = 20f;
@@ -30,6 +31,13 @@ public class PlayerController : MonoBehaviour
             MouseSpeed = 100f;
 
         }
+
+        try
+        {
+            AudioManager.Instance.PlaySound("station");
+        }
+
+        catch { }
         rb = GetComponent<Rigidbody>();
         cam = GameObject.FindWithTag("MainCamera").GetComponent<Camera>();
         Cursor.visible = false;
@@ -54,21 +62,58 @@ public class PlayerController : MonoBehaviour
     {
         Movement = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.A)) Movement.x = -1;
-        if (Input.GetKey(KeyCode.D)) Movement.x = +1;
-        if (Input.GetKey(KeyCode.W)) Movement.z = +1;
-        if (Input.GetKey(KeyCode.S)) Movement.z = -1;
+        if (Input.GetKey(KeyCode.A)) Movement.x = -1; 
+        if (Input.GetKey(KeyCode.D))  Movement.x = +1; 
+        if (Input.GetKey(KeyCode.W))  Movement.z = +1; 
+        if (Input.GetKey(KeyCode.S))  Movement.z = -1; 
 
         if (Input.GetKey(KeyCode.Space) && isGrounded)
         {
             isGrounded = false;
             rb.AddForce(new Vector3(rb.linearVelocity.x, 5f, 0f), ForceMode.Impulse);
         }
-      
 
+        
         Movement = Movement.normalized;
+        if (Movement == Vector3.zero)
+        {
+            try
+            {
+                AudioManager.Instance.StopMusic("movement");
+            }
 
+            catch { }
+        }
+
+        else if(!walk)
+        {
+            StartCoroutine(Walking());
+        }
+
+        
         LookingAround = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+    }
+
+    IEnumerator Walking()
+    {
+
+            walk = true;
+      
+        if (Movement != Vector3.zero)
+        {
+            try { AudioManager.Instance.PlaySound("movement"); } catch { }
+            yield return new WaitForSeconds(3f);
+        }
+
+        else
+        {
+            try { AudioManager.Instance.StopMusic("movement"); } catch { }
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        walk = false;
+
+
     }
 
     void MovementH()
@@ -81,6 +126,7 @@ public class PlayerController : MonoBehaviour
             rb.MovePosition(rb.position + movingDir.normalized * speed * Time.fixedDeltaTime);
         }
 
+        
     }
 
     void LookAround()

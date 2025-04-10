@@ -46,9 +46,11 @@ public class PauseMenu : MonoBehaviour
       {
         yield return new WaitForSeconds(0.3f);
         objUI.SetActive(true);
+        try { AudioManager.Instance.PlaySound("intro"); } catch { }
         ObjText.text = "Retrieve Power Core";
          yield return new WaitForSeconds(3f);
-         objUI.SetActive(false);
+        try { AudioManager.Instance.StopMusic("intro"); } catch { }
+        objUI.SetActive(false);
         
  
       }
