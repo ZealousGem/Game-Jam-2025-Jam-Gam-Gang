@@ -44,16 +44,16 @@ public class PlayerKeyCards : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Card2"))
         {
-           
-                hasKeycard2 = true;
+            try { AudioManager.Instance.PlaySound("victorySound"); } catch { }
+            hasKeycard2 = true;
                 DestroyObject(other.gameObject);
             
           
         }
         if (other.gameObject.CompareTag("Card3"))
         {
-            
-                hasKeycard3 = true;
+            try { AudioManager.Instance.PlaySound("victorySound"); } catch { }
+            hasKeycard3 = true;
                 DestroyObject(other.gameObject);
             
             
