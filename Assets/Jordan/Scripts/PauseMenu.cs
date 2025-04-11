@@ -124,6 +124,7 @@ public class PauseMenu : MonoBehaviour
 
  public void ResumeGame()
     {
+        try { AudioManager.Instance.PlaySound("click"); } catch { }
         Time.timeScale = 1f;
         isPaused = false;
         PauseMenuScr.SetActive(false);
@@ -176,6 +177,9 @@ public class PauseMenu : MonoBehaviour
         {
             Destroy(player);
         }*/
+        try { AudioManager.Instance.PlaySound("theme"); } catch { }
+        try { AudioManager.Instance.PlaySound("click"); } catch { }
+        try { AudioManager.Instance.StopMusic("station"); } catch { }
         SceneManager.LoadScene(0);
         Time.timeScale = 1f;
         isPaused = false;

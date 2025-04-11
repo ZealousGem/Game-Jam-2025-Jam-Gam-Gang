@@ -36,24 +36,28 @@ public class CardDoor : MonoBehaviour
         {
             if (this.gameObject.tag == "Door1" && PlayerKeyCards.Instance.hasKeycard1 == true)
             {
+                try { AudioManager.Instance.PlaySound("door"); } catch { }
                 Door.enabled = false;
                 moving = true;  
             }
 
             else if(this.gameObject.tag == "Door2" && PlayerKeyCards.Instance.hasKeycard2 == true)
             {
+                try { AudioManager.Instance.PlaySound("door"); } catch { }
                 Door.enabled = false;
                 moving = true;
             }
 
            else if(this.gameObject.tag == "Door3" && PlayerKeyCards.Instance.hasKeycard3 == true)
             {
+                try { AudioManager.Instance.PlaySound("door"); } catch { }
                 Door.enabled = false;
                 moving = true;
             }
 
             else
             {
+                try { AudioManager.Instance.PlaySound("UiSound"); } catch { }
                 doorUI.SetActive(true);
             }
         }

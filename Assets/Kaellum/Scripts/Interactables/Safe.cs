@@ -36,7 +36,7 @@ public class Safe : Interactable
         Debug.Log("Interacted with " + gameObject.name);
 
         Time.timeScale = 0;
-
+        try { AudioManager.Instance.PlaySound("safe"); } catch { }
         Quit.SetActive(true);
         SafePanel.SetActive(true);
         numChange.SetActive(true);
@@ -55,6 +55,7 @@ public class Safe : Interactable
         if (other.CompareTag("Player"))
         {
             UI.SetActive(true);
+            
 
         }
 

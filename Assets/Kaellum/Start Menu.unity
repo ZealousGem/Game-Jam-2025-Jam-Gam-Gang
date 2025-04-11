@@ -7292,12 +7292,6 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     isPlaying: 0
-  - nameClip: movement
-    clip: {fileID: 8300000, guid: 2932362d91f26bd409f2dc0961b281f8, type: 3}
-    volume: 0.392
-    pitch: 1
-    loop: 1
-    isPlaying: 0
   - nameClip: intro
     clip: {fileID: 8300000, guid: 5e96bfe54e9886f4cb9364c394c179ef, type: 3}
     volume: 0.745
@@ -7309,6 +7303,48 @@ MonoBehaviour:
     volume: 0.03
     pitch: 1
     loop: 1
+    isPlaying: 0
+  - nameClip: safe
+    clip: {fileID: 8300000, guid: 42d0790b7d53ca640a5b3328b6f801ba, type: 3}
+    volume: 0.465
+    pitch: 1
+    loop: 0
+    isPlaying: 0
+  - nameClip: UiSound
+    clip: {fileID: 8300000, guid: 7f9f04958d2559847b6a5bc1b7c417c4, type: 3}
+    volume: 0.465
+    pitch: 1
+    loop: 0
+    isPlaying: 0
+  - nameClip: victorySound
+    clip: {fileID: 8300000, guid: 1c6c36ae6bc84334d8b367bba08f4a7d, type: 3}
+    volume: 0.465
+    pitch: 1
+    loop: 0
+    isPlaying: 0
+  - nameClip: door
+    clip: {fileID: 8300000, guid: e32f86e1c11e95248a4a9fcbb017e62f, type: 3}
+    volume: 0.465
+    pitch: 1
+    loop: 0
+    isPlaying: 0
+  - nameClip: pain
+    clip: {fileID: 8300000, guid: 1807c64783b0b814ca41c9644ae7cc9c, type: 3}
+    volume: 0.465
+    pitch: 1
+    loop: 0
+    isPlaying: 0
+  - nameClip: level
+    clip: {fileID: 8300000, guid: bbe4e690bf4b9204b8c324552f20c87a, type: 3}
+    volume: 0.465
+    pitch: 1
+    loop: 0
+    isPlaying: 0
+  - nameClip: explode
+    clip: {fileID: 8300000, guid: e49eea3d87aac014e9dfd81898e206ed, type: 3}
+    volume: 0.741
+    pitch: 1
+    loop: 0
     isPlaying: 0
 --- !u!4 &2113366844
 Transform:

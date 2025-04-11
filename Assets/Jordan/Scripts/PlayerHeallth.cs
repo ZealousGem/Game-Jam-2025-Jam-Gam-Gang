@@ -50,6 +50,7 @@ public class PlayerHeallth : MonoBehaviour
     {
         currentHealth -= dam * Time.deltaTime;
         currentHealth = Mathf.Clamp(currentHealth, 0, MaxHealth);
+        try { AudioManager.Instance.PlaySound("pain"); } catch { }
         isDamaged = true;
         if (currentHealth <= 0)
         {

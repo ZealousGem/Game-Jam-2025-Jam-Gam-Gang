@@ -66,15 +66,30 @@ public class DialogueManager : MonoBehaviour
 
    public void SkipDialogue()
     {
-        try
+        if (Nextscene == "Level_1")
         {
-            AudioManager.Instance.PlaySound("text");
+            try
+            {
+                AudioManager.Instance.PlaySound("text");
+            }
+            catch { }
+
+            try { AudioManager.Instance.StopMusic("dialogue"); }
+
+            catch { }
+            try { AudioManager.Instance.StopMusic("type"); } catch { }
         }
-        catch { }
 
-        try { AudioManager.Instance.StopMusic("dialogue"); }
-
-        catch { }
+        else if (Nextscene == "Start Menu")
+        {
+            try
+            {
+                AudioManager.Instance.PlaySound("text");
+            }
+            catch { }
+            try { AudioManager.Instance.PlaySound("theme"); } catch { }
+        }
+        
         SceneManager.LoadScene(Nextscene);
     }
 }

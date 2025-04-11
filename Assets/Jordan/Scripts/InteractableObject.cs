@@ -53,6 +53,8 @@ public class InteractableObject : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        try { AudioManager.Instance.PlaySound("explode"); } catch { }
+        try { AudioManager.Instance.StopMusic("station"); } catch { }
         SceneManager.LoadScene("EndingDialogue");
         Debug.Log("good ending");
     }

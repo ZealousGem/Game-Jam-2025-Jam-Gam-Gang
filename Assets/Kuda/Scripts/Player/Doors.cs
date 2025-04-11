@@ -26,6 +26,7 @@ public class Doors : MonoBehaviour
                 PlayerUI playerUI = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerUI>();
                 playerUI.enabled = false;
                 PlayerInteract interaction = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<PlayerInteract>();
+                try { AudioManager.Instance.PlaySound("level"); } catch { }
                 interaction.enabled = false;
 
             }
@@ -40,6 +41,7 @@ public class Doors : MonoBehaviour
         {
             if ((other.gameObject.CompareTag("Player")) & playerKeyCards.hasKeycard2 == true)
             {
+                try { AudioManager.Instance.PlaySound("level"); } catch { }
                 DoorColl.isTrigger = true;
                 sceneManagement.GoToLevel3();
             }

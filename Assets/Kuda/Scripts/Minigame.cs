@@ -55,6 +55,7 @@ public class Minigame : MonoBehaviour
             unlocked = true;
             usedImage.overrideSprite = image[1];
             keycard.SetActive(true);
+            try { AudioManager.Instance.PlaySound("victorySound"); } catch { }
         }
         else
         {
@@ -63,6 +64,7 @@ public class Minigame : MonoBehaviour
             nitrogenSlider.value = .50f;
             hydrogenSlider.value = .50f;
             otherElementSlider.value = .50f;
+            try { AudioManager.Instance.PlaySound("UiSound"); } catch { }
         }
     }
 }

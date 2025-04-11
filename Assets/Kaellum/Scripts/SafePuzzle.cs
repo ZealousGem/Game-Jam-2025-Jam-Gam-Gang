@@ -64,11 +64,16 @@ public class SafePuzzle : MonoBehaviour
             SafePanel.SetActive(false);
             numChange.SetActive(false);
             isSolved=true;
-
+            try { AudioManager.Instance.PlaySound("victorySound"); } catch { }
             Time.timeScale = 1;
 
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+        }
+
+        else
+        {
+            try { AudioManager.Instance.PlaySound("UiSound"); } catch { }
         }
     }
 }
