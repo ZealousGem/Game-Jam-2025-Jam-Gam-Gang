@@ -84,7 +84,8 @@ public class PickUpObject : MonoBehaviour
         holdingItem = true;
         Rigidbody rb = GetComponent<Rigidbody>();
         Collider col = GetComponent<Collider>();
-        if(rb != null){
+        try { AudioManager.Instance.PlaySound("pick"); } catch { }
+        if (rb != null){
             rb.isKinematic = true;
             transform.localPosition = new Vector3(0, 0, 1);
         }
@@ -103,6 +104,7 @@ public class PickUpObject : MonoBehaviour
         holdingItem = false;
         Rigidbody rb = GetComponent<Rigidbody>();
         Collider col = GetComponent<Collider>();
+        try { AudioManager.Instance.PlaySound("drop"); } catch { }
         if (rb != null)
         {
             rb.isKinematic = false;

@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+
+        try { AudioManager.Instance.StopMusic("type"); } catch { }
         try
         {
             MouseSpeed = MouseSensitivity.instance.Amount;

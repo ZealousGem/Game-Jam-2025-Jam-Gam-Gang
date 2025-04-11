@@ -29,6 +29,7 @@ public class InteractableObject : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            try { AudioManager.Instance.PlaySound("UiSound"); } catch { }
             UI.SetActive(true);
             Playerishere = true;
         }

@@ -88,6 +88,9 @@ public class DialogueManager : MonoBehaviour
             }
             catch { }
             try { AudioManager.Instance.PlaySound("theme"); } catch { }
+            try { AudioManager.Instance.StopMusic("type"); } catch { }
+
+
         }
         
         SceneManager.LoadScene(Nextscene);

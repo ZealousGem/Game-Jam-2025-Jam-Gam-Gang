@@ -44,6 +44,7 @@ public class UiManager : MonoBehaviour
 
     public void SelectMiniGame()
     {
+        try { AudioManager.Instance.PlaySound("pc"); } catch { }
         PlayerController Player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         Player.enabled = false;
         minigame.SetActive(true);

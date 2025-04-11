@@ -168,14 +168,15 @@ public class DialogueSystem : MonoBehaviour
         
         foreach (var T in sentence.ToCharArray()) // will loop the text string through it's characters
         {
+          
+            description.text += T; // will dsiplay each character at a certain timed update to create dialogue text animation 
+            yield return new WaitForSeconds(0.03f);
             try
             {
                 AudioManager.Instance.PlaySound("type");
             }
             catch { }
-            description.text += T; // will dsiplay each character at a certain timed update to create dialogue text animation 
-            yield return new WaitForSeconds(0.03f);
-            
+
 
         }
         try
