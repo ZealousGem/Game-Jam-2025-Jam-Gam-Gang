@@ -6762,108 +6762,133 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 5adcecac8e122f0418cf0a3dbbec463c, type: 3}
     volume: 1
     pitch: 1
+    maxvol: 0
     loop: 1
     isPlaying: 0
   - nameClip: click
     clip: {fileID: 8300000, guid: e3ee2cbe0f57b1e4ea85b768196e84e2, type: 3}
     volume: 0.289
     pitch: 1
+    maxvol: 0
     loop: 0
     isPlaying: 0
   - nameClip: dialogue
     clip: {fileID: 8300000, guid: e16f5677df3d9f84aac0c1a34136fe1a, type: 3}
     volume: 0.158
     pitch: 1
+    maxvol: 0
     loop: 1
     isPlaying: 0
   - nameClip: text
     clip: {fileID: 8300000, guid: d6d1f30b2be654c46bc8a2cd3f76793e, type: 3}
     volume: 0.158
     pitch: 1
+    maxvol: 0.158
     loop: 0
     isPlaying: 0
   - nameClip: station
     clip: {fileID: 8300000, guid: f5ae569a9565fce4d840d8361a296954, type: 3}
     volume: 0.786
     pitch: 1
+    maxvol: 0
     loop: 1
     isPlaying: 0
   - nameClip: movement
     clip: {fileID: 8300000, guid: 2932362d91f26bd409f2dc0961b281f8, type: 3}
     volume: 0.392
     pitch: 1
+    maxvol: 0.392
     loop: 1
     isPlaying: 0
   - nameClip: intro
     clip: {fileID: 8300000, guid: 5e96bfe54e9886f4cb9364c394c179ef, type: 3}
     volume: 0.745
     pitch: 1
+    maxvol: 0.745
     loop: 1
     isPlaying: 0
   - nameClip: type
     clip: {fileID: 8300000, guid: 083acd3cd12462541ac5556ed121dde2, type: 3}
-    volume: 0.03
+    volume: 0.013
     pitch: 1
+    maxvol: 0.013
     loop: 1
     isPlaying: 0
   - nameClip: safe
     clip: {fileID: 8300000, guid: 42d0790b7d53ca640a5b3328b6f801ba, type: 3}
     volume: 0.465
     pitch: 1
+    maxvol: 0.465
     loop: 0
     isPlaying: 0
   - nameClip: UiSound
     clip: {fileID: 8300000, guid: 7f9f04958d2559847b6a5bc1b7c417c4, type: 3}
     volume: 0.465
     pitch: 1
+    maxvol: 0.465
     loop: 0
     isPlaying: 0
   - nameClip: victorySound
     clip: {fileID: 8300000, guid: 1c6c36ae6bc84334d8b367bba08f4a7d, type: 3}
     volume: 0.465
     pitch: 1
+    maxvol: 0.465
     loop: 0
     isPlaying: 0
   - nameClip: door
     clip: {fileID: 8300000, guid: e32f86e1c11e95248a4a9fcbb017e62f, type: 3}
     volume: 0.465
     pitch: 1
+    maxvol: 0.465
     loop: 0
     isPlaying: 0
   - nameClip: pain
     clip: {fileID: 8300000, guid: 1807c64783b0b814ca41c9644ae7cc9c, type: 3}
     volume: 0.465
     pitch: 1
+    maxvol: 0.465
     loop: 0
     isPlaying: 0
   - nameClip: level
     clip: {fileID: 8300000, guid: bbe4e690bf4b9204b8c324552f20c87a, type: 3}
     volume: 0.465
     pitch: 1
+    maxvol: 0.465
     loop: 0
     isPlaying: 0
   - nameClip: explode
     clip: {fileID: 8300000, guid: e49eea3d87aac014e9dfd81898e206ed, type: 3}
     volume: 0.741
     pitch: 1
+    maxvol: 0.741
     loop: 0
     isPlaying: 0
   - nameClip: drop
     clip: {fileID: 8300000, guid: 53bcc1538e3ea5141a8c3ec9328f6347, type: 3}
     volume: 0.58
     pitch: 1
+    maxvol: 0.58
     loop: 0
     isPlaying: 0
   - nameClip: pc
     clip: {fileID: 8300000, guid: 58a204c823a3e04409e0ff0ca1075faa, type: 3}
     volume: 0.593
     pitch: 1
+    maxvol: 0.593
     loop: 0
     isPlaying: 0
   - nameClip: pick
     clip: {fileID: 8300000, guid: 44626381a5da929458ba09c85faed9c5, type: 3}
     volume: 0.657
     pitch: 1
+    maxvol: 0.657
+    loop: 0
+    isPlaying: 0
+  - nameClip: death
+    clip: {fileID: 8300000, guid: 3311772e30ece774c9ef76ecbb7d274d, type: 3}
+    volume: 0.657
+    pitch: 1
+    maxvol: 0.657
     loop: 0
     isPlaying: 0
 --- !u!4 &2113366844

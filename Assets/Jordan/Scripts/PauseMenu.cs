@@ -140,6 +140,7 @@ public class PauseMenu : MonoBehaviour
         yield return new WaitForSeconds(2f);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        try { AudioManager.Instance.PlaySound("death"); } catch { }
         DeathScr.SetActive(true);
 
     }

@@ -14,7 +14,7 @@ public class Sound
     public float volume;
     [Range (0f, 3f)]
     public float pitch;
-
+    public float maxvol;
     public bool loop = false;
     public bool isPlaying = false;
 
@@ -23,6 +23,7 @@ public class Sound
         this.source = sourceClip;
         source.clip = clip;
         source.volume = volume;
+        maxvol = volume;
         source.pitch = pitch;
         source.playOnAwake = isPlaying;
         source.loop = loop;
@@ -32,7 +33,14 @@ public class Sound
     {
         if (source != null)
         {
-            source.volume = vol;
+            if (source.volume <= maxvol)
+            {
+                source.volume = vol;
+            }
+            else
+            {
+                source.volume = maxvol;
+            }
         }
     }
 
