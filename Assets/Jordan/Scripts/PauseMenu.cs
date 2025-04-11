@@ -3,7 +3,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
-using NUnit.Framework;
+
 
 public class PauseMenu : MonoBehaviour
 {
@@ -47,7 +47,7 @@ public class PauseMenu : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         objUI.SetActive(true);
         try { AudioManager.Instance.PlaySound("intro"); } catch { }
-        ObjText.text = "Retrieve Power Core";
+        ObjText.text = "Find The Power Core";
          yield return new WaitForSeconds(3f);
         try { AudioManager.Instance.StopMusic("intro"); } catch { }
         objUI.SetActive(false);
@@ -100,13 +100,16 @@ public class PauseMenu : MonoBehaviour
             Timing();
         }
 
-        if (PlayerKeyCards.Instance.hasKeycard1 == true && safeUI == true)
+        if (PlayerKeyCards.Instance.hasKeycard1 == true && safeUI)
         {
             StartCoroutine((SuccessException()));
             
         }
 
+        
     }
+
+   
 
     public void turonUI()
     {

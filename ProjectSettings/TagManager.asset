@@ -15,6 +15,7 @@ TagManager:
   - Door3
   - Interact
   - Mouse
+  - Audio
   layers:
   - Default
   - TransparentFX

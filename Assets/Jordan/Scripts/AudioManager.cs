@@ -107,13 +107,11 @@ public class AudioManager : MonoBehaviour
     public void VolumeAmount(float vol)
     {
         for (int i = 0; i < sounds.Length; i++)
-        {
-            if (sounds[i].loop == false)
-            {
+        { 
                 //  sounds[i].Play();
                 sounds[i].SetVolume(vol);
               //  sounds.so
-            }
+            
         }
     }
     public void MusicAmount(float vol)

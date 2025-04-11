@@ -6,6 +6,7 @@ public class PlayerKeyCards : MonoBehaviour
     public bool hasKeycard1 = false;
     public bool hasKeycard2 = false;
     public bool hasKeycard3 = false;
+  public  static bool pickedup;
     //GameObject other;
     private void Start()
     {
@@ -47,6 +48,7 @@ public class PlayerKeyCards : MonoBehaviour
             try { AudioManager.Instance.PlaySound("victorySound"); } catch { }
             hasKeycard2 = true;
                 DestroyObject(other.gameObject);
+            pickedup = true;
             
           
         }
@@ -55,6 +57,7 @@ public class PlayerKeyCards : MonoBehaviour
             try { AudioManager.Instance.PlaySound("victorySound"); } catch { }
             hasKeycard3 = true;
                 DestroyObject(other.gameObject);
+            pickedup = true;
             
             
         }

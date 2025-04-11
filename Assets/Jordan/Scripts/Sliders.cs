@@ -8,9 +8,9 @@ public class VolumeSlider : MonoBehaviour
 {
     // Start is called before the first frame update
     public Slider Slider;
-
     public float Mousesensitivty;
     TMP_Text amount;
+    float AudioSound;
     private void Update()
     {
         Slider.onValueChanged.AddListener((v) => {
@@ -27,15 +27,16 @@ public class VolumeSlider : MonoBehaviour
     {
         Mousesensitivty = 100f;
         MouseSensitivity.instance.Amount = Mousesensitivty;
-    }
-    public void VolumeMusic()
-    {
-       // AudioManager.instance.MusicVolumeAmount(Slider.value);
+        AudioSound = 1f;
+
     }
 
     public void VolumeAudio()
     {
-       // AudioManager.instance.SFXVolumeAmount(Slider.value);
+        // AudioManager.instance.SFXVolumeAmount(Slider.value);
+        AudioSound = Slider.value;
+        AudioManager.Instance.VolumeAmount(AudioSound);
+       
     }
 
     public void MouseSense()
